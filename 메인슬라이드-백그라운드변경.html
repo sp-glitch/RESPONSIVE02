@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <style>
+        .main_visual_slide .itm {
+            height: calc(100vh);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: auto 120%;
+            transition: background-size 2s;
+        }
+
+        .main_visual_slide .itm.on {
+            background-size: auto 100%;
+        }
+
+        .main_visual_slide .itm01 {
+            background-image: url(./images/mainVisual01.jpg);
+        }
+
+        .main_visual_slide .itm02 {
+            background-image: url(./images/mainVisual02.jpg);
+        }
+
+        .bar {
+            height: 10px;
+            font-size: 0;
+            background: #ddd;
+
+            position: relative;
+        }
+
+        .bar::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            background: tomato;
+            width: 0;
+        }
+
+        .bar.on::after {
+            width: 100%;
+            transition: 3s;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header id="header">
+            <div class="bar">gauge</div>
+        </header>
+
+        <main id="container">
+            <section class="main_visual">
+                <div class="main_visual_slide">
+                    <div class="itm itm01">01</div>
+                    <div class="itm itm02">02</div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            &copy; kim.
+        </footer>
+    </div>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script>
+        $(function () {
+
+            $('.main_visual_slide').on('init', function () {
+                $('.bar').addClass('on');
+            });
+
+            $('.main_visual_slide').slick({
+                fade: true,
+                autoplay: true,
+                pauseOnhover: false,
+                arrows: false,
+            });
+
+            $('.main_visual_slide').on('beforeChange', function () {
+                $('.bar').removeClass('on');
+            });
+
+            $('.main_visual_slide').on('afterChange', function () {
+                let current = $('.main_visual_slide .slick-current');
+                $('.main_visual_slide .itm').removeClass('on');
+                current.addClass('on');
+                $('.bar').addClass('on');
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

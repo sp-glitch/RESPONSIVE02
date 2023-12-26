@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>류피자텍스트애니메이숀</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/common.css?ver=1.0">
+
+    <style>
+        h2 span {
+            opacity: 1;
+            animation: txtAni 2s infinite;
+        }
+
+        /* h2.on span {
+            opacity: 1;
+            animation: txtAni 0.5s both;
+        } */
+
+        @keyframes txtAni {
+            0% {
+                opacity: 0
+            }
+
+            20% {
+                opacity: 1
+            }
+
+            80% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+    </style>
+
+    <script src="./js/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <section class="default">
+        <div class="title">
+            <h2><span></span> <strong>NEW PIZZA</strong></h2>
+            <button class="btn">멈춰</button>
+        </div>
+    </section>
+    <script>
+        const TXT = [
+            '너무 맛있는 피자',
+            '어쩌면 맛없는 피자'
+        ];
+
+
+        $('h2 span').text(TXT[0]);
+
+        let num = 0;
+
+        function txtAni() {
+            if (num == 1) {
+                num = 0;
+            } else {
+                num = num + 1;
+            }
+            $('h2 span').text(TXT[num]);
+            console.log(num)
+        }
+        const ANITXT = setInterval(txtAni, 2000);
+
+        $('.btn').on('click', function () {
+            clearInterval(ANITXT)
+        })
+
+
+
+    </script>
+</body>
+
+</html>

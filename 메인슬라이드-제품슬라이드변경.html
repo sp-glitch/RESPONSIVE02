@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <style>
+        .main_product_slide {
+            margin: 0 -15px;
+        }
+
+        .main_product_slide .itm {
+            margin: 0 15px;
+            filter: grayscale(1);
+        }
+
+        .main_product_slide .itm.slick-center {
+            filter: grayscale(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header id="header">
+            <div class="inner">
+                <img src="./images/logo02.png" alt="">
+            </div>
+        </header>
+
+        <main id="container">
+            <section class="main_visual">
+                <div class="inner">
+                    <div class="main_product_slide">
+                        <div class="itm">
+                            <img src="./images/mainPortfolio01.jpg" alt="">
+                        </div>
+                        <div class="itm">
+                            <img src="./images/mainPortfolio02.jpg" alt="">
+                        </div>
+                        <div class="itm">
+                            <img src="./images/mainPortfolio03.jpg" alt="">
+                        </div>
+                        <div class="itm">
+                            <img src="./images/mainPortfolio04.jpg" alt="">
+                        </div>
+                        <div class="itm">
+                            <img src="./images/mainPortfolio05.jpg" alt="">
+                        </div>
+                        <div class="itm">
+                            <img src="./images/mainPortfolio06.jpg" alt="">
+                        </div>
+                        <div class="itm">
+                            <img src="./images/mainPortfolio07.jpg" alt="">
+                        </div>
+                        <div class="itm">
+                            <img src="./images/mainPortfolio08.jpg" alt="">
+                        </div>
+                        <div class="itm">
+                            <img src="./images/mainPortfolio09.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            &copy; kim.
+        </footer>
+    </div>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script>
+        $(function () {
+
+            $('.main_product_slide').slick({
+                slidesToShow: 3,
+                centerMode: true,
+                centerPadding: '100px',
+            });
+
+        });
+    </script>
+</body>
+
+</html>

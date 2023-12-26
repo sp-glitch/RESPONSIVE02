@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/hamburgers.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        #header {
+            line-height: 90px;
+        }
+
+        #header .inner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gnb>ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        .gnb>ul>li>a {
+            display: block;
+        }
+
+        .main_visual {
+            position: relative;
+            z-index: 1;
+            background: #333;
+            height: 150vh;
+        }
+
+        #footer {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .mopen {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            #header {
+                height: 90px;
+            }
+
+            #header h1 {
+                position: fixed;
+                z-index: 1000;
+            }
+
+            .gnb {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                z-index: 999;
+                width: calc(100% - 90px);
+                height: 100vh;
+                background: #fff;
+                border-right: 1px solid #ddd;
+                padding: 130px 15px 0 15px;
+            }
+
+            .gnb.on {
+                left: 0;
+            }
+
+            .gnb>ul {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .gnb>ul>li>a {
+                line-height: 40px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .mopen {
+                display: block;
+                position: fixed;
+                right: 30px;
+                top: 30px;
+                line-height: 1;
+            }
+
+            .mopen .hamburger {
+                padding: 0 0;
+            }
+
+            .mopen .hamburger .hamburger-inner {
+                background: tomato;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header id="header">
+            <div class="inner">
+                <h1 class="animate__animated animate__flip animate__infinite">
+                    <a href="/">
+                        <img src="./images/logo02.png" alt="">
+                    </a>
+                </h1>
+                <nav class="gnb">
+                    <ul>
+                        <li><a href="">menu01</a></li>
+                        <li><a href="">menu02</a></li>
+                        <li><a href="">menu03</a></li>
+                        <li><a href="">menu04</a></li>
+                        <li><a href="">menu05</a></li>
+                    </ul>
+                </nav>
+                <div class="mopen">
+                    <button class="hamburger hamburger--elastic" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main id="container">
+            <div class="main_visual"></div>
+        </main>
+
+        <footer id="footer">
+            &copy; kim.
+        </footer>
+    </div>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $('.mopen').on('click', function () {
+                $('.gnb').toggleClass('on');
+                $(this).find('.hamburger').toggleClass('is-active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

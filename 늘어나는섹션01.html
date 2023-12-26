@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .main_section .inner {
+            display: flex;
+        }
+
+        .main_section .itm {
+            height: 500px;
+            flex: 1;
+            transition: 0.5s;
+        }
+
+        .main_section .itm:hover {
+            flex: 3;
+        }
+
+        .main_section .itm01 {
+            background: url(./images/mainSolution01.jpg) no-repeat center top;
+        }
+
+        .main_section .itm02 {
+            background: url(./images/mainSolution02.jpg) no-repeat center top;
+        }
+
+        .main_section .itm03 {
+            background: url(./images/mainSolution03.jpg) no-repeat center top;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <main id="container">
+            <section class="main_section default">
+                <div class="inner">
+                    <div class="itm itm01">
+                        <div class="con">hakunamatata</div>
+                    </div>
+                    <div class="itm itm02">
+                        <div class="con">hakunamatata</div>
+                    </div>
+                    <div class="itm itm03">
+                        <div class="con">hakunamatata</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script>
+        $(function () {
+        });
+    </script>
+</body>
+
+</html>
